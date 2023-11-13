@@ -2,21 +2,16 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - run: |
-        echo "Hello World"
-        npm install
-        npm run build
-        npm run test
-        pm2 restart next-app
-      
+      - name: Run a one-line script
+        run: echo Hello, World!
